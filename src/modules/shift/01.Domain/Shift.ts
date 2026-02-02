@@ -1,4 +1,4 @@
-import { type Employee } from '../../employee/01.Domain/entities/Employee.js';
+import { type Employee } from '../../employee/04.Domain/entities/Employee.js';
 import { type Time } from './Time.js';
 
 class Shift {

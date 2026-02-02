@@ -1,4 +1,4 @@
-import type { IRepository } from '../../../../shared/02.Application/ports/IRepository.js';
+import type { IRepository } from '../../../../shared/03.Application/ports/IRepository.js';
 import { type Employee } from '../entities/Employee.js';
 
 export interface IEmployeeRepository extends IRepository<Employee> {

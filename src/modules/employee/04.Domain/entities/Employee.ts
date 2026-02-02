@@ -1,4 +1,4 @@
-import { BaseEntity } from '../../../../shared/01.Domain/BaseEntity.js';
+import { BaseEntity } from '../../../../shared/04.Domain/BaseEntity.js';
 
 export interface EmployeeProps {
     firstName: string;
