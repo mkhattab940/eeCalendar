@@ -1,14 +1,12 @@
 import { Router } from 'express';
-import { container } from '../../../../../shared/02.Infrastructure/container.js';
 import { RegisterEmployeeController } from '../controllers/RegisterEmployeeController.js';
 
-const employeeRouter = Router();
+interface EmployeeRoutesDeps {
+    registerEmployeeController: RegisterEmployeeController;
+}
 
-const registerEmployeeController = container.resolve('registerEmployeeController');
-
-
-
-
-employeeRouter.post('/', (req, res) => registerEmployeeController.execute(req, res));
-
-export { employeeRouter };
+export function createEmployeeRouter({ registerEmployeeController }: EmployeeRoutesDeps): Router {
+    const router = Router();
+    router.post('/registerEmployee', (req, res) => registerEmployeeController.handle(req, res));
+    return router;
+}
