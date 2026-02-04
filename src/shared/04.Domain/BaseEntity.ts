@@ -7,4 +7,8 @@ export abstract class BaseEntity<T> {
         this.id = id ?? ulid();
         this.props = props;
     }
+
+    public getPropsCopy(): T {
+        return Object.freeze({ ...this.props });
+    }
 }

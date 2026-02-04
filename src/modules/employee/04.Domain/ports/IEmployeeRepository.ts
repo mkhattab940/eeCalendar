@@ -1,5 +1,5 @@
-import type { IRepository } from '../../../../shared/03.Application/ports/IRepository.js';
-import { type Employee } from '../entities/Employee.js';
+import type { IRepository } from '@shared/04.Domain/IRepository.js';
+import { type Employee } from '@modules/employee/04.Domain/entities/Employee.js';
 
 export interface IEmployeeRepository extends IRepository<Employee> {
     findById(id: string): Promise<Employee | null>;

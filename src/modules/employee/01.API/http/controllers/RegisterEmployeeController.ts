@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
-import { BaseController } from '../../../../../shared/01.API/http/BaseController.js';
-import type { RegisterEmployeeUseCase } from '../../../03.Application/commands/RegisterEmployee.js';
+import { BaseController } from '@shared/01.API/http/BaseController.js';
+import type { RegisterEmployeeUseCase } from '@modules/employee/03.Application/commands/RegisterEmployee.js';
 
 interface RegisterEmployeeControllerDeps {
     registerEmployeeUseCase: RegisterEmployeeUseCase;

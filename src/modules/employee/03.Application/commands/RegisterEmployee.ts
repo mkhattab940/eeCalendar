@@ -1,8 +1,8 @@
-import { Result } from '../../../../shared/04.Domain/Result.js';
-import { Employee } from '../../04.Domain/entities/Employee.js';
-import type { EmployeeProps } from '../../04.Domain/entities/Employee.js';
-import { type IEmployeeRepository } from '../../04.Domain/ports/IEmployeeRepository.js';
-import { type IApplicationCommand } from '../../../../shared/02.Infrastructure/commands/IApplicationCommand.js';
+import { Result } from '@shared/04.Domain/Result.js';
+import { Employee } from '@modules/employee/04.Domain/entities/Employee.js';
+import type { EmployeeProps } from '@modules/employee/04.Domain/entities/Employee.js';
+import { type IEmployeeRepository } from '@modules/employee/04.Domain/ports/IEmployeeRepository.js';
+import { type IApplicationCommand } from '@shared/02.Infrastructure/commands/IApplicationCommand.js';
 
 interface RegisterEmployeeUsecaseDeps {
     employeeRepository: IEmployeeRepository;
