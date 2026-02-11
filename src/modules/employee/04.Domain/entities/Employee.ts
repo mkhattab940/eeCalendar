@@ -9,8 +9,8 @@ export interface EmployeeProps {
 
 export class Employee extends BaseEntity<EmployeeProps> {
 
-    static create(id: string, props: EmployeeProps): Employee {
-        return new Employee(id, props);
+    static create(props: EmployeeProps): Employee {
+        return new Employee(props);
     }
 }
 

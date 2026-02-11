@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import { BaseController } from '@shared/01.API/http/BaseController.js';
-import type { RegisterEmployeeUseCase } from '@modules/employee/03.Application/commands/RegisterEmployee.js';
+import type { RegisterEmployeeDTO, RegisterEmployeeUseCase } from '@modules/employee/03.Application/commands/RegisterEmployee.js';
 
 interface RegisterEmployeeControllerDeps {
     registerEmployeeUseCase: RegisterEmployeeUseCase;
@@ -16,8 +16,7 @@ export class RegisterEmployeeController extends BaseController {
 
     public async handle(req: Request, res: Response): Promise<Response> {
         try {
-            const dto = {
-                id: req.body.id,
+            const dto: RegisterEmployeeDTO = {
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 phoneNumber: req.body.phoneNumber,

@@ -18,14 +18,14 @@ export class RegisterEmployeeUseCase implements IApplicationCommand<Employee> {
      }
 
     async execute(dto: RegisterEmployeeDTO): Promise<Result<void>> {
-        const exists = await this.repository.exists(dto.id);
-        if (exists) {
-            throw new Error(`Employee with id ${dto.id} already exists.`);
-        }
+        // const exists = await this.repository.exists(dto.id);
+        // if (exists) {
+        //     throw new Error(`Employee with id ${dto.id} already exists.`);
+        // }
 
         const props = this.map(dto);
 
-        const employee = Employee.create(dto.id, props);
+        const employee = Employee.create(props);
 
         await this.repository.save(employee);
 
@@ -43,7 +43,6 @@ export class RegisterEmployeeUseCase implements IApplicationCommand<Employee> {
 }
 
 export interface RegisterEmployeeDTO {
-    id: string;
     firstName: string;
     lastName: string;
     phoneNumber: string;
